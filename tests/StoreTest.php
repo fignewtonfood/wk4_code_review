@@ -78,6 +78,23 @@
             $this->assertEquals(true, is_numeric($result));
         }
 
+        function test_find() {
+            //Arrange
+            $store_name = "Shoes Plus";
+            $store_name2 = "Foot Crazy";
+            $test_store = new Store($store_name);
+            $test_store->save();
+            $test_store2 = new Store($store_name2);
+            $test_store2->save();
+
+            //Act
+            $result = Store::find($test_store->getId());
+            
+            //Assert
+            $this->assertEquals($test_store, $result);
+        }
+
+
 
         // function test_getStoreName() {
         //     //Arrange
@@ -126,21 +143,6 @@
         //     $test_store->deleteOne();
         //     //Assert
         //     $this->assertEquals([$test_store2], Store::getAll());
-        // }
-        // function test_find() {
-        //     //Arrange
-        //     $store_name = "Shoes Plus";
-        //     $id1 = 1;
-        //     $store_name2 = "Foot Crazy";
-        //     $id2 = 2;
-        //     $test_store = new Store($store_name, $id1);
-        //     $test_store->save();
-        //     $test_store2 = new Store($store_name2, $id2);
-        //     $test_store2->save();
-        //     //Act
-        //     $result = Store::find($test_store->getId());
-        //     //Assert
-        //     $this->assertEquals($test_store, $result);
         // }
         // function testAddBrand() {
         //     //Arrange
