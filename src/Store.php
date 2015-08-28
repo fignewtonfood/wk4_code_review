@@ -2,25 +2,29 @@
 
     require_once "Brand.php";
 
-    class Store {
-
+    class Store
+    {
         private $name;
         private $id;
 
-        function __construct($name, $id = null) {
+        function __construct($name, $id = null)
+        {
             $this->name = $name;
             $this->id = $id;
         }
 
-        function setName($new_name) {
+        function setName($new_name)
+        {
             $this->name = (string) $new_name;
         }
 
-        function getName() {
+        function getName()
+        {
             return $this->name;
         }
 
-        function getId() {
+        function getId()
+        {
             return $this->id;
         }
 
@@ -40,27 +44,31 @@
             return $brands;
         }
 
-        function save() {
+        function save()
+        {
             $GLOBALS['DB']->exec("INSERT INTO stores (name) VALUES ('{$this->getName()}')");
             $this->id = $GLOBALS['DB']->lastInsertId();
         }
 
-        function update($new_name) {
+        function update($new_name)
+        {
             $GLOBALS['DB']->exec("UPDATE stores set name = '{$new_name}' WHERE id = {$this->getId()};");
             $this->setName($new_name);
         }
-        //
-        // function deleteOne()
-        // {
+
+        function deleteOne()
+        {
         //     $GLOBALS['DB']->exec("DELETE FROM stores WHERE id = {$this->getId()};");
         //     $GLOBALS['DB']->exec("DELETE FROM brands_stores WHERE store_id = {$this->getId()};");
-        // }
+        }
 
-        function addBrand($brand) {
+        function addBrand($brand)
+        {
             $GLOBALS['DB']->exec("INSERT INTO brands_stores (store_id, brand_id) VALUES ({$this->getId()}, {$brand->getId()});");
         }
 
-        static function getAll() {
+        static function getAll()
+        {
             $returned_stores = $GLOBALS['DB']->query("SELECT * FROM stores;");
             $stores = array();
             foreach($returned_stores as $store) {
@@ -72,11 +80,13 @@
             return $stores;
         }
 
-        static function deleteAll() {
+        static function deleteAll()
+        {
             $GLOBALS['DB']->exec("DELETE FROM stores;");
         }
 
-        static function find($search_id){
+        static function find($search_id)
+        {
             $found_store = null;
             $stores = Store::getAll();
             foreach($stores as $store) {

@@ -102,7 +102,7 @@ x14) Get Stores from Brand method using join statement
 UPDATE
 
 // Test Store::update()
-15) Update a store's name
+x15) Update a store's name
     Input: "Shoes Plus"
     Input new author: "Boots and More"
     Output: "Boots and More"
