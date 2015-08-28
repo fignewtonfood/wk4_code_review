@@ -79,7 +79,7 @@ UPDATES
 DELETE ONES
 
 // Test Store::deleteOne()
-8) Delete one store
+12) Delete one store
     Input: "Shoes Plus"
     Input2: "Foot Crazy"
     Output: ["Foot Crazy"]
