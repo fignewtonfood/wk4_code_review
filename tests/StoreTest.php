@@ -65,11 +65,23 @@
             $this->assertEquals([], $result);
         }
 
+        function test_getId() {
+            //Arrange
+            $store_name = "Shoes Plus";
+            $test_store = new Store($store_name);
+            $test_store->save();
+
+            //Act
+            $result = $test_store->getId();
+
+            //Assert
+            $this->assertEquals(true, is_numeric($result));
+        }
 
 
         // function test_getStoreName() {
         //     //Arrange
-        //     $store_name = "Work stuff";
+        //     $store_name = "Shoes Plus";
         //     $test_Store = new Store($store_name);
         //     //Act
         //     $result = $test_Store->getStoreName();
@@ -87,19 +99,9 @@
         //     //Assert
         //     $this->assertEquals("Home chores", $result);
         // }
-        // function test_getId() {
-        //     //Arrange
-        //     $store_name = "Work stuff";
-        //     $id = 1;
-        //     $test_store = new Store($store_name, $id);
-        //     //Act
-        //     $result = $test_store->getId();
-        //     //Assert
-        //     $this->assertEquals(1, $result);
-        // }
         // function testUpdate () {
         //     //Arrange
-        //     $store_name = "Work stuff";
+        //     $store_name = "Shoes Plus";
         //     $id = 1;
         //     $test_store = new Store($store_name, $id);
         //     $test_store->save();
@@ -112,7 +114,7 @@
         // function testDeleteStore()
         // {
         //     //Arrange
-        //     $store_name = "Work stuff";
+        //     $store_name = "Shoes Plus";
         //     $id = 1;
         //     $test_store = new Store($store_name, $id);
         //     $test_store->save();
@@ -142,7 +144,7 @@
         // }
         // function testAddBrand() {
         //     //Arrange
-        //     $store_name = "Work stuff";
+        //     $store_name = "Shoes Plus";
         //     $id1 = 1;
         //     $test_store = new Store($store_name, $id1);
         //     $test_store->save();
@@ -179,7 +181,7 @@
         // }
         // function testDelete() {
         //     //Arrange
-        //     $store_name = "Work stuff";
+        //     $store_name = "Shoes Plus";
         //     $id = 1;
         //     $test_store = new Store($store_name, $id);
         //     $test_store->save();

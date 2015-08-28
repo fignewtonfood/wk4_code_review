@@ -12,7 +12,7 @@ x2) Get all stores
     Input2: "Foot Crazy"
     Output: [["Shoes Plus"], ["Foot Crazy"]]
 // Test Store::deleteAll()
-3) Delete all stores
+x3) Delete all stores
     Input: "Shoes Plus"
     Input2: "Foot Crazy"
     Output: []
