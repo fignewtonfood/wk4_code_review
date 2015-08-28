@@ -11,7 +11,7 @@
                 <p>Here are all your stores:</p>
                 <ul class="list-group">
                     {% for store in stores %}
-                        <li class="list-group-item"><a href="/stores/{{ store.getId }}">{{ store.getStoreName }}</a></li>
+                        <li class="list-group-item"><a href="/stores/{{ store.getId }}">{{ store.getName }}</a></li>
                     {% endfor %}
                 </ul>
                 {% endif %}
