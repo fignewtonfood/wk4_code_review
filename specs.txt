@@ -85,7 +85,7 @@ x11) Save a store and brand at the same time to join table
 GET [OTHERS]
 
 // Test Store::getBrands()
-13) Get Brands from Store method using join statement
+x13) Get Brands from Store method using join statement
     Input brand: "Nike"
     Input store: "Shoes Plus"
     Input brand2: "Adidas"
