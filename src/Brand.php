@@ -40,38 +40,10 @@
             return $stores;
         }
 
-        // function getStores() {
-        //     $query = $GLOBALS['DB']->query("SELECT store_id FROM brands_stores WHERE brand_id = {$this->getId()};");
-        //     $store_ids = $query->fetchAll(PDO::FETCH_ASSOC);
-        //     $stores = Array();
-        //     foreach($store_ids as $id) {
-        //         $store_id = $id['store_id'];
-        //         $result = $GLOBALS['DB']->query("SELECT * FROM stores WHERE id = {$store_id};");
-        //         $returned_store = $result->fetchAll(PDO::FETCH_ASSOC);
-        //         $store_name = $returned_store[0]['store_name'];
-        //         $id = $returned_store[0]['id'];
-        //         $due_date = $returned_store[0]['due_date'];
-        //         $new_store = new Store($store_name, $id, $due_date);
-        //         array_push($stores, $new_store);
-        //     }
-        //     return $stores;
-        // }
-
         function save() {
             $GLOBALS['DB']->exec("INSERT INTO brands (name) VALUES ('{$this->getName()}')");
             $this->id = $GLOBALS['DB']->lastInsertId();
         }
-
-        // function update($new_name) {
-        //     $GLOBALS['DB']->exec("UPDATE brands set name = '{$new_name}' WHERE id = {$this->getId()};");
-        //     $this->setName($new_name);
-        // }
-        //
-        // function deleteOne()
-        // {
-        //     $GLOBALS['DB']->exec("DELETE FROM brands WHERE id = {$this->getId()};");
-        //     $GLOBALS['DB']->exec("DELETE FROM brands_stores WHERE brand_id = {$this->getId()};");
-        // }
 
         function addStore($store) {
             $GLOBALS['DB']->exec("INSERT INTO brands_stores (brand_id, store_id) VALUES ({$this->getId()}, {$store->getId()});");

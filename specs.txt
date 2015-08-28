@@ -76,7 +76,7 @@ x11) Save a store and brand at the same time to join table
     Output: ["Nike"]
 
 // Test Brand::addStore($store)
-12) Save a brand and store at the same time to join table
+x12) Save a brand and store at the same time to join table
     Input brand: "Nike"
     Input name: "Shoes Plus"
     Output: ["Shoes Plus"]
@@ -92,16 +92,14 @@ x13) Get Brands from Store method using join statement
     Output: ["Nike", "Adidas"]
 
 // Test Brand::getStores()
-14) Get Stores from Brand method using join statement
+x14) Get Stores from Brand method using join statement
     Input brand: "Nike"
-    Input brand2: "Adidas"
+    Input store2: "Foot Crazy"
     Input store: "Shoes Plus"
-    Output: ["Nike", "Adidas"]
+    Output: ["Shoes Plus", "Foot Crazy"]
 
 
-
-
-UPDATES
+UPDATE
 
 // Test Store::update()
 11) Update a store's name
@@ -110,7 +108,7 @@ UPDATES
     Output: "Boots and More"
 
 
-DELETE ONES
+DELETE ONE
 
 // Test Store::deleteOne()
 12) Delete one store
