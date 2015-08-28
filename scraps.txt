@@ -1,0 +1,2 @@
+brand = wolverine = Store
+store = badger = Brand

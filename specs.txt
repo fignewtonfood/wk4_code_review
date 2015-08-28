@@ -3,7 +3,7 @@ SPEC SHEET FOR LIBRARY
 SAVES/GETS/DELETEALLS
 
 // Test Store::save()
-1) Save a store
+x1) Save a store
     Input: "Shoes Plus"
     Output: ["Shoes Plus"]
 // Test Store::getAll()
