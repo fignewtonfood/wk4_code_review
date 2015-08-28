@@ -11,7 +11,7 @@
                 <p>Here are all your Brands:</p>
                 <ul class="list-group">
                     {% for brand in brands %}
-                        <li class="list-group-item"><a href="/brands/{{ brand.getId }}">{{ brand.getBrandName }}</a></li>
+                        <li class="list-group-item"><a href="/brands/{{ brand.getId }}">{{ brand.getName }}</a></li>
                     {% endfor %}
                 </ul>
             {% endif %}
@@ -21,7 +21,7 @@
                     <input id='brand_name' name='brand_name' type='text'>
                     <select name="store_id">
                         {% for store in stores %}
-                        <option value="{{ store.getId }}">{{ store.getStoreName }}</option>
+                        <option value="{{ store.getId }}">{{ store.getName }}</option>
                         {% endfor %}
                     </select>
 
@@ -31,7 +31,7 @@
 
             <div class="form-group">
                 <form action='/delete_brands' method='post'>
-                    <button class="btn btn-default" type='submit'>Clear</button>
+                    <button class="btn btn-default" type='submit'>Clear All</button>
                 </form>
             </div>
 

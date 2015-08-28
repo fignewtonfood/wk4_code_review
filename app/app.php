@@ -39,8 +39,7 @@
   // });
   //
   $app->post("/brands", function () use ($app) {
-      $id = null;
-      $brand = new Brand($_POST['brand_name'], $id, $_POST['due_date']);
+      $brand = new Brand($_POST['brand_name']);
       $brand->save();
       return $app['twig']->render('brands.html.twig', array('brands' => Brand::getAll(), 'stores' => Store::getAll()));
   });
@@ -50,10 +49,10 @@
   //     return $app['twig']->render('brand.html.twig', array('brand' => $brand, 'stores' => $brand->getStores(), 'all_stores' => Store::getAll()));
   // });
   //
-  // $app->post("/delete_brands", function() use ($app) {
-  //     Brand::deleteAll();
-  //     return $app['twig']->render('index.html.twig');
-  // });
+  $app->post("/delete_brands", function() use ($app) {
+      Brand::deleteAll();
+      return $app['twig']->render('index.html.twig');
+  });
   //
   // $app->post("/delete_stores", function() use ($app) {
   //     Store::deleteAll();
