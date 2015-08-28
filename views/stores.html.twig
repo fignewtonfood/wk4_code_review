@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="/../main.css">
     </head>
     <body>
+<!-- List of stores with links to store pages-->
         <div class="container">
             <h2>Stores</h2>
             {% if stores is not empty %}
@@ -15,7 +16,7 @@
                     {% endfor %}
                 </ul>
                 {% endif %}
-
+<!-- Add a store -->
             <div class="submit-form">
                 <form action='/stores' method='post'>
                     <label for='name'>Store Name</label>
@@ -23,7 +24,7 @@
 
                     <button class="btn btn-default" type='submit'>Add Store</button>
                 </form>
-
+<!-- Delete all stores -->
                 <form action='/delete_stores' method='post'>
                     <button class="btn btn-default" type='submit'>Clear All</button>
                 </form>

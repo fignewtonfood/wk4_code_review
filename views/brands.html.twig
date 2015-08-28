@@ -5,6 +5,7 @@
         <title>Brands</title>
     </head>
     <body>
+<!-- List of brands with links to brand pages-->
         <div class="container">
             <h2>Brands</h2>
             {% if brands is not empty %}
@@ -15,6 +16,7 @@
                     {% endfor %}
                 </ul>
             {% endif %}
+<!-- Add a brand -->
             <div class="form-group">
                 <form action='/brands' method='post'>
                     <label for='brand_name'>Brand Name</label>
@@ -23,7 +25,7 @@
                     <button class="btn btn-default" type='submit'>Add Brand</button>
                 </form>
             </div>
-
+<!-- Delete all brands -->
             <div class="form-group">
                 <form action='/delete_brands' method='post'>
                     <button class="btn btn-default" type='submit'>Clear All</button>

@@ -93,6 +93,5 @@
         $store->deleteOne();
         return $app['twig']->render('index.html.twig');
     });
-
   return $app;
 ?>

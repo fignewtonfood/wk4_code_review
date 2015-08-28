@@ -100,7 +100,7 @@
             //Assert
             $this->assertEquals($test_store, $result);
         }
-
+//spec 11
         function testAddBrand()
         {
             //Arrange
@@ -117,7 +117,7 @@
             //Assert
             $this->assertEquals($test_store->getBrands(), [$test_brand]);
         }
-
+//spec 13
         function testGetBrands()
         {
             //Arrange

@@ -5,6 +5,7 @@
     <title>{{ store.getName }}</title>
 </head>
 <body>
+<!-- Displays all brands for a single store -->
     <div class="container">
         <h2>{{ store.getName }}</h2>
 
@@ -16,7 +17,7 @@
                 {% endfor %}
             </ul>
         {% endif %}
-
+<!-- Drop down menu with list of all brands so that a brand may be added to this store -->
         <h4>Add a brand to this store:</h4>
 
         <div class="form-group">
@@ -31,7 +32,7 @@
                 <button class="btn btn-default" type='submit'>Add brand</button>
             </form>
         </div>
-
+<!-- Update capability for this store -->
         <div class="form-group">
             <form action='/stores/{{ store.getId }}' method='post'>
                 <input name="_method" type="hidden" value="patch">
@@ -42,7 +43,7 @@
                 <button class="btn btn-default" type='submit'>Change name</button>
             </form>
         </div>
-
+<!-- Delete one capability for this store -->
         <div class="form-group">
             <form action='/stores/{{ store.getId }}' method='post'>
                 <input name="_method" type="hidden" value="delete">

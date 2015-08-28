@@ -93,7 +93,7 @@
             //Assert
             $this->assertEquals($test_brand, $result);
         }
-
+//spec 12
         function testAddStore() {
             //Arrange
             $brand_name = "Nike";
@@ -109,7 +109,7 @@
             //Assert
             $this->assertEquals($test_brand->getStores(), [$test_store]);
         }
-
+//spec 14
         function testGetStores() {
             //Arrange
             $brand_name = "Adidas";

@@ -23,9 +23,10 @@
         function getId() {
             return $this->id;
         }
-
+//Get Stores from Brand method using join statement
         function getStores()
         {
+//Join statement saved into returned_stores; query selects all stores columns and joins data across tables to return all matching stores that fit a specific brand id
             $returned_stores = $GLOBALS['DB']->query("SELECT stores.* FROM brands
                 JOIN brands_stores ON (brands.id = brands_stores.brand_id)
                 JOIN stores ON (brands_stores.store_id = stores.id)
@@ -44,7 +45,7 @@
             $GLOBALS['DB']->exec("INSERT INTO brands (name) VALUES ('{$this->getName()}')");
             $this->id = $GLOBALS['DB']->lastInsertId();
         }
-
+//Save a brand and store at the same time to join table
         function addStore($store) {
             $GLOBALS['DB']->exec("INSERT INTO brands_stores (brand_id, store_id) VALUES ({$this->getId()}, {$store->getId()});");
         }

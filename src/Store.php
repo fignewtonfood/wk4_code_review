@@ -27,9 +27,10 @@
         {
             return $this->id;
         }
-
+//Get Brands from Store method using join statement
         function getBrands()
         {
+//Join statement saved into returned_brands; query selects all brands columns and joins data across tables to return all matching brands that fit a specific store id
             $returned_brands = $GLOBALS['DB']->query("SELECT brands.* FROM stores
                 JOIN brands_stores ON (stores.id = brands_stores.store_id)
                 JOIN brands ON (brands_stores.brand_id = brands.id)
@@ -61,7 +62,7 @@
             $GLOBALS['DB']->exec("DELETE FROM stores WHERE id = {$this->getId()};");
             $GLOBALS['DB']->exec("DELETE FROM brands_stores WHERE store_id = {$this->getId()};");
         }
-
+//Save a store and brand at the same time to join table
         function addBrand($brand)
         {
             $GLOBALS['DB']->exec("INSERT INTO brands_stores (store_id, brand_id) VALUES ({$this->getId()}, {$brand->getId()});");
