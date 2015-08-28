@@ -15,8 +15,11 @@
         'twig.path' => __DIR__.'/../views'
     ));
 
+    use Symfony\Component\HttpFoundation\Request;
+    Request::enableHttpMethodParameterOverride();
+
     $app->get("/", function() use ($app) {
-        return $app['twig']->render('index.html.twig', array('stores' => Store::getAll(), 'brands' => Brand::getAll()));
+        return $app['twig']->render('index.html.twig');
     });
 
     $app->get("/brands", function() use ($app) {
@@ -73,7 +76,12 @@
   //    return $app['twig']->render('brand.html.twig', array('brand' => $brand, 'brands' => Brand::getAll(), 'stores' => $brand->getStores(), 'all_stores' => Store::getAll()));
   // });
 
-    $app->patch("/stores/{id}/edit", function($id) use ($app) {
+    $app->get("/stores/{id}/edit", function($id) use ($app) {
+        $store = Store::find($id);
+        return $app['twig']->render('store_edit.html.twig', array('store' => $store));
+    });
+
+    $app->patch("/stores/{id}", function($id) use ($app) {
         $name = $_POST['name'];
         $store = Store::find($id);
         $store->update($name);
