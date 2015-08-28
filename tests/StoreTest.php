@@ -14,10 +14,10 @@
 
     class StoreTest extends PHPUnit_Framework_TestCase {
 
-        protected function tearDown() {
-            Store::deleteAll();
-            // Brand::deleteAll();
-        }
+        // protected function tearDown() {
+        //     Store::deleteAll();
+        //     // Brand::deleteAll();
+        // }
 
         function test_save() {
             //Arrange
