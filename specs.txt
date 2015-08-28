@@ -43,7 +43,7 @@ x7) Return id for a store object
 
 // Test Brand::getId()
 x8) Return id for a brand object
-    Input name: "Nike"
+    Input brand: "Nike"
     Input id: {auto-incremented id}
     Output: {same auto-incremented id}
 
@@ -51,7 +51,7 @@ x8) Return id for a brand object
 FIND IDS
 
 // Test Store::find($id)
-9) Find stores by id
+x9) Find stores by id
     Input name: "Shoes Plus"
     Input id: {auto-incremented id1}
     Input name2: "Foot Crazy"
@@ -59,12 +59,27 @@ FIND IDS
     Output: [{auto-incremented id2}, "Foot Crazy"]
 
 // Test Brand::find($id)
-10) Find brands by id
+x10) Find brands by id
     Input name: "Shoes Plus"
     Input id: {auto-incremented id1}
     Input name2: "Foot Crazy"
     Input id2: {auto-incremented id2}
     Output: [{auto-incremented id2}, "Foot Crazy"]
+
+
+ADDS
+
+// Test Store::addBrand($brand)
+11) Save a store and brand at the same time to join table
+    Input name: "Shoes Plus"
+    Input brand: "Nike"
+    Output: ["Nike"]
+
+// Test Brand::addStore($store)
+12) Save a brand and store at the same time to join table
+    Input brand: "Nike"
+    Input name: "Shoes Plus"
+    Output: ["Shoes Plus"]
 
 
 UPDATES

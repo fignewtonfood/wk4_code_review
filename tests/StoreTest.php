@@ -89,10 +89,27 @@
 
             //Act
             $result = Store::find($test_store->getId());
-            
+
             //Assert
             $this->assertEquals($test_store, $result);
         }
+
+        function testAddBrand() {
+            //Arrange
+            $store_name = "Shoes Plus";
+            $test_store = new Store($store_name);
+            $test_store->save();
+            $brand_name = "Nike";
+            $test_brand = new Brand($brand_name);
+            $test_brand->save();
+
+            //Act
+            $test_store->addBrand($test_brand);
+
+            //Assert
+            $this->assertEquals($test_store->getBrands(), [$test_brand]);
+        }
+
 
 
 
@@ -144,22 +161,6 @@
         //     //Assert
         //     $this->assertEquals([$test_store2], Store::getAll());
         // }
-        // function testAddBrand() {
-        //     //Arrange
-        //     $store_name = "Shoes Plus";
-        //     $id1 = 1;
-        //     $test_store = new Store($store_name, $id1);
-        //     $test_store->save();
-        //     $brand_name = "File reports";
-        //     $id2 = 2;
-        //     $due_date = null;
-        //     $test_brand = new Brand($brand_name, $id2, $due_date);
-        //     $test_brand->save();
-        //     //Act
-        //     $test_store->addBrand($test_brand);
-        //     //Assert
-        //     $this->assertEquals($test_store->getBrands(), [$test_brand]);
-        // }
         // function testGetBrands() {
         //     //Arrange
         //     $store_name = "Foot Crazy";
@@ -187,7 +188,7 @@
         //     $id = 1;
         //     $test_store = new Store($store_name, $id);
         //     $test_store->save();
-        //     $brand_name = "File reports";
+        //     $brand_name = "Nike";
         //     $id2 = 2;
         //     $due_date = null;
         //     $test_brand = new Brand($brand_name, $id2, $due_date);
