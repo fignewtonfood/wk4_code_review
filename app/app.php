@@ -59,7 +59,7 @@
 
     $app->post("/delete_stores", function() use ($app) {
         Store::deleteAll();
-        return $app['twig']->render('index.html.twig');
+        return $app['twig']->render('stores.html.twig', array('stores' => Store::getAll()));
     });
 
     $app->post("/add_brands", function () use ($app){
@@ -86,6 +86,12 @@
         $store = Store::find($id);
         $store->update($name);
         return $app['twig']->render('store.html.twig', array('store'=>$store, 'stores' => Store::getAll(), 'brands' => $store->getBrands(), 'all_brands' => Brand::getAll()));
+    });
+
+    $app->delete("/stores/{id}", function($id) use ($app) {
+        $store = Store::find($id);
+        $store->deleteOne();
+        return $app['twig']->render('index.html.twig');
     });
 
   return $app;

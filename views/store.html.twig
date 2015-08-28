@@ -43,8 +43,14 @@
             </form>
         </div>
 
+        <div class="form-group">
+            <form action='/stores/{{ store.getId }}' method='post'>
+                <input name="_method" type="hidden" value="delete">
 
-        <p><a href="/stores/{{ store.getId }}/edit">Edit this store name</a></p>
+                <button class="btn btn-default" type='submit'>Delete this store</button>
+            </form>
+        </div>
+
 
         <p><a href='/'>Home</a></p>
         <p><a href='/stores'>Back to all Stores</a></p>

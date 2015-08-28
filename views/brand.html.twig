@@ -1,0 +1,40 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/../main.css">
+    <title>{{ brand.getName }}</title>
+</head>
+<body>
+    <div class="container">
+        <h2>{{ brand.getName }}</h2>
+
+        {% if stores is not empty %}
+            <p>Here are the stores for this brand:</p>
+            <ul class="list-group">
+                {% for store in stores %}
+                    <li class="list-group-item">{{ store.getName }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h4>Add a store to this brand:</h4>
+
+        <div class="form-group">
+            <form action='/add_stores' method='post'>
+                <input id="brand_id" name="brand_id" type="hidden" value="{{ brand.getId }}">
+                <label for="store_id">Select a store</label>
+                <select id='store_id' name='store_id' type='text'>
+                  {% for store in all_stores %}
+                    <option value="{{ store.getId }}"> {{ store.getName }} </option>
+                  {% endfor %}
+                </select>
+                <button class="btn btn-default" type='submit'>Add store</button>
+            </form>
+        </div>
+
+
+        <p><a href='/'>Home</a></p>
+        <p><a href='/brands'>Back to all Brands</a></p>
+    </div>
+</body>
+</html>
