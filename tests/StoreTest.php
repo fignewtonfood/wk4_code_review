@@ -19,35 +19,35 @@
         //     // Brand::deleteAll();
         // }
 
-        function test_save() {
-            //Arrange
-            $store_name = "Shoes Plus";
-            $test_store = new Store($store_name);
-
-            //Act
-            $test_store->save();
-            $result = Store::getAll();
-
-            //Assert
-            $this->assertEquals($test_store, $result[0]);
-        }
-
-        // function test_getAll() {
+        // function test_save() {
         //     //Arrange
         //     $store_name = "Shoes Plus";
-        //     $store_name2 = "Foot Crazy";
         //     $test_store = new Store($store_name);
-        //     $test_store->save();
-        //     $test_store2 = new Store($store_name2);
-        //     $test_store2->save();
         //
         //     //Act
+        //     $test_store->save();
         //     $result = Store::getAll();
         //
         //     //Assert
-        //     $this->assertEquals([$test_store, $test_store2], $result);
+        //     $this->assertEquals($test_store, $result[0]);
         // }
-        //
+
+        function test_getAll() {
+            //Arrange
+            $store_name = "Shoes Plus";
+            $store_name2 = "Foot Crazy";
+            $test_store = new Store($store_name);
+            $test_store->save();
+            $test_store2 = new Store($store_name2);
+            $test_store2->save();
+
+            //Act
+            $result = Store::getAll();
+
+            //Assert
+            $this->assertEquals([$test_store, $test_store2], $result);
+        }
+
         // function test_deleteAll() {
         //     //Arrange
         //     $store_name = "Shoes Plus";
