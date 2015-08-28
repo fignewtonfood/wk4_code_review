@@ -1,0 +1,85 @@
+SPEC SHEET FOR LIBRARY
+
+SAVES/GETS/DELETEALLS
+
+// Test Store::save()
+1) Save a store
+    Input: "Shoes Plus"
+    Output: ["Shoes Plus"]
+// Test Store::getAll()
+2) Get all stores
+    Input: "Shoes Plus"
+    Input2: "Foot Crazy"
+    Output: [["Shoes Plus"], ["Foot Crazy"]]
+// Test Store::deleteAll()
+3) Delete all stores
+    Input: "Shoes Plus"
+    Input2: "Foot Crazy"
+    Output: []
+
+// Test Brand::save()
+4) Save a brand
+    Input: "Nike"
+    Output: ["Nike"]
+// Test Brand::getAll()
+5) Get all brands
+    Input: "Nike"
+    Input2: "Adidas"
+    Output: [["Nike"], ["Adidas"]]
+// Test Brand::deleteAll()
+6) Delete all brands
+    Input: "Nike"
+    Input2: "Adidas"
+    Output: []
+
+
+RETURN IDS
+
+// Test Store::getId()
+7) Return id for a store object
+    Input name: "Shoes Plus"
+    Input id: {auto-incremented id}
+    Output: {same auto-incremented id}
+
+// Test Brand::getId()
+8) Return id for a brand object
+    Input name: "Nike"
+    Input id: {auto-incremented id}
+    Output: {same auto-incremented id}
+
+
+FIND IDS
+
+// Test Store::find($id)
+9) Find stores by id
+    Input name: "Shoes Plus"
+    Input id: {auto-incremented id1}
+    Input name2: "Foot Crazy"
+    Input id2: {auto-incremented id2}
+    Output: [{auto-incremented id2}, "Foot Crazy"]
+
+// Test Brand::find($id)
+10) Find brands by id
+    Input name: "Shoes Plus"
+    Input id: {auto-incremented id1}
+    Input name2: "Foot Crazy"
+    Input id2: {auto-incremented id2}
+    Output: [{auto-incremented id2}, "Foot Crazy"]
+
+
+UPDATES
+
+// Test Store::update()
+11) Update a store's name
+    Input: "Shoes Plus"
+    Input new author: "Boots and More"
+    Output: "Boots and More"
+
+
+DELETE ONES
+
+// Test Store::deleteOne()
+8) Delete one store
+    Input: "Shoes Plus"
+    Input2: "Foot Crazy"
+    Output: ["Foot Crazy"]
