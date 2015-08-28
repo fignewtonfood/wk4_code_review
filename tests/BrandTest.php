@@ -65,11 +65,23 @@
             $this->assertEquals([], $result);
         }
 
+        function test_getId() {
+            //Arrange
+            $brand_name = "Nike";
+            $test_brand = new Brand($brand_name);
+            $test_brand->save();
+
+            //Act
+            $result = $test_brand->getId();
+
+            //Assert
+            $this->assertEquals(true, is_numeric($result));
+        }
 
 
         // function test_getBrandName() {
         //     //Arrange
-        //     $brand_name = "Work stuff";
+        //     $brand_name = "Nike";
         //     $test_Brand = new Brand($brand_name);
         //     //Act
         //     $result = $test_Brand->getBrandName();
@@ -87,19 +99,9 @@
         //     //Assert
         //     $this->assertEquals("Home chores", $result);
         // }
-        // function test_getId() {
-        //     //Arrange
-        //     $brand_name = "Work stuff";
-        //     $id = 1;
-        //     $test_brand = new Brand($brand_name, $id);
-        //     //Act
-        //     $result = $test_brand->getId();
-        //     //Assert
-        //     $this->assertEquals(1, $result);
-        // }
         // function testUpdate () {
         //     //Arrange
-        //     $brand_name = "Work stuff";
+        //     $brand_name = "Nike";
         //     $id = 1;
         //     $test_brand = new Brand($brand_name, $id);
         //     $test_brand->save();
@@ -112,7 +114,7 @@
         // function testDeleteBrand()
         // {
         //     //Arrange
-        //     $brand_name = "Work stuff";
+        //     $brand_name = "Nike";
         //     $id = 1;
         //     $test_brand = new Brand($brand_name, $id);
         //     $test_brand->save();
@@ -142,7 +144,7 @@
         // }
         // function testAddStore() {
         //     //Arrange
-        //     $brand_name = "Work stuff";
+        //     $brand_name = "Nike";
         //     $id1 = 1;
         //     $test_brand = new Brand($brand_name, $id1);
         //     $test_brand->save();
@@ -179,7 +181,7 @@
         // }
         // function testDelete() {
         //     //Arrange
-        //     $brand_name = "Work stuff";
+        //     $brand_name = "Nike";
         //     $id = 1;
         //     $test_brand = new Brand($brand_name, $id);
         //     $test_brand->save();
