@@ -22,16 +22,16 @@
   $app->get("/brands", function() use ($app) {
       return $app['twig']->render('brands.html.twig', array('brands' => Brand::getAll(), 'stores' => Store::getAll()));
   });
-  //
-  // $app->get("/stores", function() use ($app) {
-  //     return $app['twig']->render('stores.html.twig', array('stores' => Store::getAll()));
-  // });
-  //
-  // $app->post("/stores", function() use ($app) {
-  //     $store = new Store($_POST['name']);
-  //     $store->save();
-  //     return $app['twig']->render('stores.html.twig', array('stores' => Store::getAll()));
-  // });
+
+  $app->get("/stores", function() use ($app) {
+      return $app['twig']->render('stores.html.twig', array('stores' => Store::getAll()));
+  });
+  
+  $app->post("/stores", function() use ($app) {
+      $store = new Store($_POST['name']);
+      $store->save();
+      return $app['twig']->render('stores.html.twig', array('stores' => Store::getAll()));
+  });
   //
   // $app->get("/stores/{id}", function($id) use ($app) {
   //     $store = Store::find($id);
