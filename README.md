@@ -23,6 +23,13 @@ This program will store shoes and shoe brands into a MySQL database. The user wi
 
 PHP, phpunit, Silex, Twig, HTML, CSS, Boostrap, Symfony, MySQL
 
+## SQL Commands Used
+CREATE DATABASE shoes;
+USE shoes;
+CREATE TABLE `brands` (`id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL, `name` VARCHAR(255) NULL DEFAULT NULL, PRIMARY KEY (`id`));
+CREATE TABLE `stores` (`id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL, `name` VARCHAR(255) NULL DEFAULT NULL, PRIMARY KEY (`id`));
+CREATE TABLE `brands_stores` (`id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL, `brand_id` INTEGER NULL DEFAULT NULL, `store_id` INTEGER NULL DEFAULT NULL, PRIMARY KEY (`id`));
+
 ### Legal
 
 

@@ -1,0 +1,53 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/../main.css">
+    <title>{{ store.getName }}</title>
+</head>
+<body>
+    <div class="container">
+        <h2>{{ store.getName }}</h2>
+
+        {% if brands is not empty %}
+            <p>Here are the brands for this store:</p>
+            <ul class="list-group">
+                {% for brand in brands %}
+                    <li class="list-group-item">{{ brand.getName }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h4>Add a brand to this store:</h4>
+
+        <div class="form-group">
+            <form action='/add_brands' method='post'>
+                <input id="store_id" name="store_id" type="hidden" value="{{ store.getId }}">
+                <label for="brand_id">Select a brand</label>
+                <select id='brand_id' name='brand_id' type='text'>
+                  {% for brand in all_brands %}
+                    <option value="{{ brand.getId }}"> {{ brand.getName }} </option>
+                  {% endfor %}
+                </select>
+                <button class="btn btn-default" type='submit'>Add brand</button>
+            </form>
+        </div>
+
+        <div class="form-group">
+            <form action='/stores/{{ store.getId }}/edit' method='post'>
+                <input name="_method" type="hidden" value="patch">
+
+                <label for="name">Change Store Name</label>
+                <input id="name" name="name" type="text">
+
+                <button class="btn btn-default" type='submit'>Change name</button>
+            </form>
+        </div>
+
+
+        <p><a href="/stores/{{ store.getId }}/edit">Edit this store name</a></p>
+
+        <p><a href='/'>Home</a></p>
+        <p><a href='/stores'>Back to all Stores</a></p>
+    </div>
+</body>
+</html>
