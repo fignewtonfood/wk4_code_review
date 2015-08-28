@@ -130,6 +130,17 @@
             $this->assertEquals($test_store->getBrands(), [$test_brand, $test_brand2]);
         }
 
+        function testUpdate () {
+            //Arrange
+            $store_name = "Shoes Plus";
+            $test_store = new Store($store_name);
+            $test_store->save();
+            $new_store_name = "Boots and More";
+            //Act
+            $test_store->update($new_store_name);
+            //Assert
+            $this->assertEquals("Boots and More", $test_store->getName());
+        }
 
 
         // function test_getStoreName() {
@@ -151,18 +162,6 @@
         //     $result = $test_store->getStoreName();
         //     //Assert
         //     $this->assertEquals("Home chores", $result);
-        // }
-        // function testUpdate () {
-        //     //Arrange
-        //     $store_name = "Shoes Plus";
-        //     $id = 1;
-        //     $test_store = new Store($store_name, $id);
-        //     $test_store->save();
-        //     $new_store_name = "Foot Crazy";
-        //     //Act
-        //     $test_store->update($new_store_name);
-        //     //Assert
-        //     $this->assertEquals("Foot Crazy", $test_store->getStoreName());
         // }
         // function testDeleteStore()
         // {

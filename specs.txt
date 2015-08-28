@@ -102,7 +102,7 @@ x14) Get Stores from Brand method using join statement
 UPDATE
 
 // Test Store::update()
-11) Update a store's name
+15) Update a store's name
     Input: "Shoes Plus"
     Input new author: "Boots and More"
     Output: "Boots and More"
@@ -111,7 +111,7 @@ UPDATE
 DELETE ONE
 
 // Test Store::deleteOne()
-12) Delete one store
+16) Delete one store
     Input: "Shoes Plus"
     Input2: "Foot Crazy"
     Output: ["Foot Crazy"]
