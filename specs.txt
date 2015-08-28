@@ -7,7 +7,7 @@ x1) Save a store
     Input: "Shoes Plus"
     Output: ["Shoes Plus"]
 // Test Store::getAll()
-2) Get all stores
+x2) Get all stores
     Input: "Shoes Plus"
     Input2: "Foot Crazy"
     Output: [["Shoes Plus"], ["Foot Crazy"]]
