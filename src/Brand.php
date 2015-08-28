@@ -73,10 +73,10 @@
             return $brands;
         }
 
-        // static function deleteAll() {
-        //     $GLOBALS['DB']->exec("DELETE FROM brands;");
-        // }
-        //
+        static function deleteAll() {
+            $GLOBALS['DB']->exec("DELETE FROM brands;");
+        }
+
         // static function find($search_id){
         //     $found_brand = null;
         //     $brands = Brand::getAll();

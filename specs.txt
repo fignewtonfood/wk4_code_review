@@ -18,16 +18,16 @@ SAVES/GETS/DELETEALLS
     Output: []
 
 // Test Brand::save()
-4) Save a brand
+x4) Save a brand
     Input: "Nike"
     Output: ["Nike"]
 // Test Brand::getAll()
-5) Get all brands
+x5) Get all brands
     Input: "Nike"
     Input2: "Adidas"
     Output: [["Nike"], ["Adidas"]]
 // Test Brand::deleteAll()
-6) Delete all brands
+x6) Delete all brands
     Input: "Nike"
     Input2: "Adidas"
     Output: []
