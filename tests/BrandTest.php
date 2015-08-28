@@ -78,6 +78,22 @@
             $this->assertEquals(true, is_numeric($result));
         }
 
+        function test_find() {
+            //Arrange
+            $brand_name = "Nike";
+            $brand_name2 = "Adidas";
+            $test_brand = new Brand($brand_name);
+            $test_brand->save();
+            $test_brand2 = new Brand($brand_name2);
+            $test_brand2->save();
+
+            //Act
+            $result = Brand::find($test_brand->getId());
+            
+            //Assert
+            $this->assertEquals($test_brand, $result);
+        }
+
 
         // function test_getBrandName() {
         //     //Arrange
@@ -126,21 +142,6 @@
         //     $test_brand->deleteOne();
         //     //Assert
         //     $this->assertEquals([$test_brand2], Brand::getAll());
-        // }
-        // function test_find() {
-        //     //Arrange
-        //     $brand_name = "Nike";
-        //     $id1 = 1;
-        //     $brand_name2 = "Adidas";
-        //     $id2 = 2;
-        //     $test_brand = new Brand($brand_name, $id1);
-        //     $test_brand->save();
-        //     $test_brand2 = new Brand($brand_name2, $id2);
-        //     $test_brand2->save();
-        //     //Act
-        //     $result = Brand::find($test_brand->getId());
-        //     //Assert
-        //     $this->assertEquals($test_brand, $result);
         // }
         // function testAddStore() {
         //     //Arrange

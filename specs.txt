@@ -36,13 +36,13 @@ x6) Delete all brands
 RETURN IDS
 
 // Test Store::getId()
-7) Return id for a store object
+x7) Return id for a store object
     Input name: "Shoes Plus"
     Input id: {auto-incremented id}
     Output: {same auto-incremented id}
 
 // Test Brand::getId()
-8) Return id for a brand object
+x8) Return id for a brand object
     Input name: "Nike"
     Input id: {auto-incremented id}
     Output: {same auto-incremented id}
