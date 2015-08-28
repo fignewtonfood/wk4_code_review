@@ -70,7 +70,7 @@ x10) Find brands by id
 ADDS
 
 // Test Store::addBrand($brand)
-11) Save a store and brand at the same time to join table
+x11) Save a store and brand at the same time to join table
     Input name: "Shoes Plus"
     Input brand: "Nike"
     Output: ["Nike"]
