@@ -1,22 +1,22 @@
 
-# To Do List
+# Shoe Store
 
-##### Epicodus To Do List, 8/24/2015
+##### Epicodus Shoe Store, 8/28/2015
 
-#### By Kenny Grage and Tim White
+#### By Tim White
 
 ## Description
 
-This program will store tasks inputed by the user into a MySQL database.
+This program will store shoes and shoe brands into a MySQL database. The user will have the capability to create, read, update, and delete individual shoe entries as well as creating and reading shoe brands.
 
 ## Setup
 
-- clone this repository
+- clone https://github.com/fignewtonfood/wk4_code_review.git
 - Run $ composer install in project folder
 - Start mySQL server
 - Start php server in web directory folder
 - navigate web browser to localhost:8000
-- Run phpmyadmin and import database from folder
+- Run phpmyadmin and import database store.zip from folder
 
 
 ## Technologies Used
@@ -26,7 +26,7 @@ PHP, phpunit, Silex, Twig, HTML, CSS, Boostrap, Symfony, MySQL
 ### Legal
 
 
-Copyright (c) 2015 Kenny Grage and Tim White
+Copyright (c) 2015 Tim White
 
 This software is licensed under the MIT license.
 
